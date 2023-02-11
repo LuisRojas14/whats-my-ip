@@ -4,16 +4,17 @@ const App = () => {
   const [ip, setIp] = useState('');
   const [location, setLocation] = useState({});
   const [time, setTime] = useState('');
+  // const Key='at_i4HyY6XQX0seHbAUuz9Wc6cYUs1d6'
 
   useEffect(() => {
-    const apiKey={key}
+    
     // Get the user's IP address
-    fetch(`https://geo.ipify.org/api/v2/country?apiKey= ${key}`)
+    fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_i4HyY6XQX0seHbAUuz9Wc6cYUs1d6`)
       .then(res => res.json())
       .then(data => setIp(data.ip));
 
     // Get the user's location and time information
-    fetch('https://ipapi.co/json/')
+    fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_i4HyY6XQX0seHbAUuz9Wc6cYUs1d6`)
       .then(res => res.json())
       .then(data => {
         setLocation({
