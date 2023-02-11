@@ -12,13 +12,9 @@ const Geolocation = () => {
       `https://geo.ipify.org/api/v2/country?apiKey=${process.env.REACT_APP_KEY}`
     )
       .then((res) => res.json())
-      .then((data) => setIp(data.ip));
-
-    // Get the user's location and time information
-    fetch
-    //   `https://geo.ipify.org/api/v2/country?apiKey=at_ozfXLIhA38p1caXiWjc64BSzlv8PK`
-    // )
-      (`https://ipapi.co/json/`)
+      .then((data) => {
+        setIp(data.ip);
+      })
       .then((res) => res.json())
       .then((data) => {
         setLocation({
