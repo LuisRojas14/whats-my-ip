@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <h1>What's My IP Address</h1>
+    <h1>What's My IP Address?</h1>
   )
 }
 
