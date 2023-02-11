@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 
-function App() {
+const App = () => {
+  const [ip, setIp] = useState('');
+  const [location, setLocation] = useState({});
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    const apiKey={key}
+    // Get the user's IP address
+    fetch(`https://geo.ipify.org/api/v2/country?apiKey= ${key}`)
+      .then(res => res.json())
+      .then(data => setIp(data.ip));
+
+    // Get the user's location and time information
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        setLocation({
+          city: data.city,
+          region: data.region,
+          country: data.country_name,
+        });
+        setTime(new Date().toLocaleString());
+      });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Your IP Address</h1>
+      <p>{ip}</p>
+      <h1>Location Information</h1>
+      <p>City: {location.city}</p>
+      <p>Region: {location.region}</p>
+      <p>Country: {location.country}</p>
+      <h1>Time Information</h1>
+      <p>{time}</p>
     </div>
   );
-}
+};
 
 export default App;
+
