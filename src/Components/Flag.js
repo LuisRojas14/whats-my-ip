@@ -14,7 +14,7 @@ const Flag = ({location}) => {
 
   return (
     <div>
-       <img crossOrigin="anonymous" src={flag} alt="" />
+       <img crossOrigin="" src={flag} alt="" />
     </div>
   )
 }
