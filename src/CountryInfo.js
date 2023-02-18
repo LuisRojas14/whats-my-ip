@@ -6,9 +6,7 @@ const CountryInfo = ({ countryCode, accessKey }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `"https://api.countrylayer.com/v2/alpha/DE?access_key=cb50a13914ac99215a59cfd93e8c1096"`
-        );
+        const response = await fetch(`https://ipapi.co/8.8.8.8/country/`);
         const data = await response.json();
         setCountryData(data);
       } catch (error) {

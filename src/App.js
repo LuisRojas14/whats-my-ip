@@ -9,7 +9,7 @@ function App() {
       <h1>
         <Header />
         <Geolocation />
-        <CountryInfo />
+        {/* <CountryInfo /> */}
       </h1>
     </div>
   );
