@@ -1,5 +1,5 @@
 import "./App.css";
-// import CountryInfo from "./CountryInfo";
+
 import Geolocation from "./Geolocation";
 import Header from "./Header";
 import Map from "./Map";
@@ -10,8 +10,7 @@ function App() {
       <h1>
         <Header />
         <Geolocation />
-        {/* <CountryInfo /> */}
-        <Map/>
+        <Map />
       </h1>
     </div>
   );

@@ -21,7 +21,7 @@ const Map = () => {
   }, []);
 
   return (
-    <MapContainer center={location} zoom={13} style={{ height: "300px" }}>
+    <MapContainer center={location} zoom={13} style={{ height: "350px" }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={location}>
         <Popup>Your current location</Popup>
