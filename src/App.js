@@ -1,5 +1,4 @@
 import "./App.css";
-
 import Geolocation from "./Geolocation";
 import Header from "./Header";
 import Map from "./Map";

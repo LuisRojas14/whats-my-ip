@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import App from "./App";
 
 const Map = () => {
-  const [location, setLocation] = useState({ lat: 51.533, lng: 7.4086 });
+  const [location, setLocation] = useState({ lat: 51.5167, lng: 7.45 });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -21,10 +22,10 @@ const Map = () => {
   }, []);
 
   return (
-    <MapContainer center={location} zoom={13} style={{ height: "350px" }}>
+    <MapContainer center={location} zoom={13}  className="map" style={{ height: "350px" }}>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={location}>
-        <Popup>Your current location</Popup>
+        <Popup>Current Location</Popup>
       </Marker>
     </MapContainer>
   );
